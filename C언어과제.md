@@ -247,5 +247,116 @@ int main(void) /* main 함수 호출 */
  
  <h3><b> ● 기타 함수 </b></h3>
  
+ ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/3b7cf779-aa97-48c7-8219-41125b47f4dd)
+
+```
+#include <stdlib.h> /*랜덤함수를 사용하기 위한 헤더 파일*/
+#include <stdio.h> /*C언어에서 랜덤함수를 사용하기 위한 헤더 파일*/
+
+int main(void) /*메인 함수 호출*/
+{
+    system("dir"); /* 현재 디렉토리의 파일 및 폴더 목록을 출력, "dir"은 윈도우에서 사용되는 명령어.*/
+    printf("아무 키나 치세요\n"); /*사용자가 아무 키나 입력하게 하기 위해 안내 메시지를 출력.*/
+    _getch(); /*사용자가 키를 입력. _getch() 함수는 윈도우환경에서 단일 키 입력을 처리*/
+    system("cls"); /*화면을 지우고 콘솔 창을 깨끗하게 초기화. "cls"는 윈도우에서 사용되는 명령어*/
+
+    return 0; /*0으로 초기화, 프로그램 종료*/
+}
+```
+ <hr>
+ 
+ <h3><b> ● Lab : 시간 맞추기 게임 </b></h3>
+ 
+ * 사용자에게 정확한 시간을 예측하게 하는 게임을 만들어보자. 
+<br>사용자에게 10초가 지나면 엔터키를 누르라고 한 후에, 정확한 시간과 얼마나 차이나는지 출력
+
+ ```
+ 10초가 되면 엔터키를 누르세요
+ 종료되었습니다.
+ 경과된 시간은 6초입니다.
+ ```
+ 
+ ```
+#include <stdio.h>
+#include <time.h>
+
+int main(void)
+{
+    time_t start, end; /*time_t는 unsigned long과 동일하다*/
+    start = time(NULL); /*현재 시간을 start에 저장*/
+
+    printf("10초가 되면 아무 키나 누르세요\n"); /*사용자에게 10초가 되면 아무 키나 누를 것을 안내*/
+
+    while (1)
+    {
+        if (getchar()) /* 만약 사용자가 키를 입력하면 루프를 빠져나옴 */
+            break;
+    }
+
+    printf("종료되었습니다.\n"); /* 종료되었음을 안내 */
+
+    end = time(NULL); /*현재 시간을 end에 기록, 저장*/
+    printf("경과된 시간은 %ld 초입니다. \n", end - start); /*경과된 시간을 저장 및 출력*/.
+
+    return 0; /*0으로 초기화, 프로그램 종료*/
+}
+```
+
+ ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/8c10aa39-5e65-43dd-98cf-2324f2ea08d2)
+<Br>ㄴ 결과
+ 
+ <hr>
+ 
+ <h3><b> ● Lab : 나무 높이 측정 </b></h3>
+ 
+ * 각도기와 삼각 함수를 이용하면 나무의 높이를 측정할 수 있다.
+ <br>다음 그림을 참조하여서 나무의 높이를 측정하는 프로그램을 작성하여보자.
+ 
+ ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/117555db-cb8e-45d9-8fe3-80de1f6cacb6)
+
+ ```
+ 나무와의 길이(단위는 미터) : 4.2
+ 측정자의 키(단위는 미터): 1.8
+ 각도(단위는 도): 62
+ 나무의 높이(단위는 미터): 9.699047
+ ```
+ 
+ ```
+#include <math.h> /*여러 수학 함수들을 포함하는 표준 라이브러리*/
+#include <stdio.h> /*C언어에서 랜덤함수를 사용하기 위한 헤더 파일*/
+
+int main(void) /*메인 함수 호출*/
+{
+    double height, distance, tree_height_degrees, radians; /*나무의 높이, 측정자의 키, 각도, 나무의 높이 변수 호출*/
+
+    printf("나무와의 거리(단위는 미터): ");
+    scanf("%lf", &distance); /*이용자가 나무의 거리를 입력하게 함*/
+
+    printf("측정자의 키(단위는 미터): ");
+    scanf("%lf", &height); /*사용자가 측정자의 키를 입력하게 함*/
+
+    printf("각도(단위는 도): ");
+    scanf("%lf", &tree_height_degrees); /*이용자가 나무의 각도를 입력*/
+
+    radians = tree_height_degrees * (3.141592 / 180.0); /*입력된 각도를 라디안으로 변환*/
+
+    double tree_height = tan(radians) * distance + height; /*나무의 높이를 계산*/
+    printf("나무의 높이(단위는 미터): %lf\n", tree_height); /*계산된 나무의 높이를 출력*/
+
+    return 0;/*프로그램 종료 및 0으로 초기화*/
+}
+```
+
+<hr>
+ 
+ <h3><b> ● Lab : 삼각함수 그리기 </b></h3>
+ 
+ * 우리는 삼각함수를 계산하는 라이브러리 함수를 학습하였다.
+ <br>이것을 이용하여서 싸인함수 그래프를 90도 회전하여서 그려보자
+ 
+ ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/027f6df6-73c9-495a-89d1-8e3bd3bcf391)
+ <br> ㄴ 출력 예시
+ 
+ ```
  
  
