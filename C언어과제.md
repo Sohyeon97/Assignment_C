@@ -164,5 +164,88 @@ int main(void) /*main함수 호출*/
  ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/c836fb61-ef9d-4a67-bc84-a1f63c9225c7)
  <br>ㄴ예를 들어 2.31의 값을 가지면 floor은 정수 2에, ceiling은 정수 3의 값을 가진다.
  <br>
- 1) floor() 함수 
+ 1) floor() 함수 : 내림함수 <br>
+ 2) ceil() 함수 : 올림함수 <br>
+ 
+ ```
+double result, value = 1.6;
+
+result = floor(value); /*floor 함수를 사용하여 value의 소수점 아래를 버림.*/
+printf("%lf", result); /* 버림 연산을 한 결과를 출력*/
+
+result = ceil(value); /*ceil 함수를 사용하여 value의 소수점 아래를 올림*/
+printf("%lf", result); /*올림 연산을 한 결과인 결과를 출력*/
+ ```
+ 
+ <hr>
+ 
+ <h3><b> ● fabs() </b></h3>
+ 1. fabs()는 실수를 받아서 절대값을 반환한다.
+
+ ```
+ printf("12.0의 절대값은 %f\n", fabs(12.0));
+ printf("-12.0의 절대값은 %f\n", fabs(-12.0));
+ ```
+
+ <hr>
+ 
+ <h3><b> ● pow()와 sqrt() </b></h3>
+ 
+ ```
+ printf("10의 3승은 %.0.f\n",pow(10.0,3.0));
+ printf("16의 제곱근은 %.0.f\n",sqrt(64));
+ ```
+ 
+1) pow 함수가 하는 일 : 베이스(base)가 되는 숫자의 n 제곱을 구하기
+<br>(base의 n승이라고도 표현하고, 기호로는 base^n 으로도 표현)
+ 
+2) sqrt 함수가 하는 일 : 매개변수 x로 들어온 숫자에 루트를 씌워서 계산한 값을 반환.
+<br>즉, 루트 x를 구해주는 함수 (제곱근을 구해주는 함수).
+ <br>
+ 
+ * 예제
+ 
+ ```
+ 10의 3승은 1000
+ 16의 제곱근은 4.
+ ```
+
+ ```
+ // 삼각함수 라이브러리
+#include <math.h> /*여러 수학 함수들을 포함하는 표준 라이브러리*/
+#include <stdio.h> /*C언어에서 랜덤함수를 사용하기 위한 헤더 파일*/
+
+int main(void) /* main 함수 호출 */
+{
+    double pi = 3.141592635; /* pi값 지정 */
+    double x, y; /* x, y 변수 지정*/
+
+    x = pi / 2; /*x에 pi/2 값을 대입*/
+    y = sin(x); /* x의 사인 값을 계산하여 y에 저장*/
+    printf("sin(%f) = %f\n", x, y); // x와 y의 값을 출력합니다.
+
+    y = cos(x); /*x의 코사인 값을 계산하여 y에 저장*/
+    printf("cos(%f) = %f\n", x, y); /*x와 y의 값을 출력*/
+
+    return 0; /*0으로 초기화 (교안에 없어서 추가)*/
+}
+```
+
+![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/c56ced82-eab0-4996-b563-bd18e63f7170)
+<br>ㄴ결과
+ 
+ <hr>
+ 
+ <h3><b> ● 중간 점검 </b></h3>
+ 1) 90도에서의 싸인값을 계산하는 문장을 작성하여 보아라.
+ <br>ㄴ sin(90.0*(3.141592/180.0));
+ <br>
+ 2) rand() % 10 이 계산하는 값의 범위는?
+ <br>ㄴ 0에서 9
+ 
+ <hr>
+ 
+ <h3><b> ● 기타 함수 </b></h3>
+ 
+ 
  
