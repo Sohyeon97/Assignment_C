@@ -531,4 +531,5 @@ int main(void) /*메인함수 호출*/
 }
 ```
  
- 
+ ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/7deba95d-99e8-41ed-bf3e-1d46660b4208)
+<br>ㄴ결과 (한글로 입력시, 오류 발생하여 영어로 입력함)
