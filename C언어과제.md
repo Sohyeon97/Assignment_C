@@ -346,6 +346,8 @@ int main(void) /*메인 함수 호출*/
     return 0;/*프로그램 종료 및 0으로 초기화*/
 }
 ```
+ ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/63908b5c-55fd-434b-9f8c-59df7f0b527a)
+<br>ㄴ 결과
 
 <hr>
  
