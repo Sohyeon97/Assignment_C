@@ -103,7 +103,7 @@ int main(void) /*메인 함수 정의*/
  <h3><b>● 도전문제 (p.67)</b></h3>
 
 ```
-자동차를 3개로 늘려보자
+# 자동차를 3개로 늘려보자
 ```
 
 ```
@@ -159,7 +159,7 @@ int main(void) /*main함수 호출*/
  
  <hr>
  
- <h3><b> ● floor()와 celi() 함수 </b></h3>
+ <h3><b> ● floor()와 ceil() 함수 (p.70) </b></h3>
  
  ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/c836fb61-ef9d-4a67-bc84-a1f63c9225c7)
  <br>ㄴ예를 들어 2.31의 값을 가지면 floor은 정수 2에, ceiling은 정수 3의 값을 가진다.
@@ -179,7 +179,7 @@ printf("%lf", result); /*올림 연산을 한 결과인 결과를 출력*/
  
  <hr>
  
- <h3><b> ● fabs() </b></h3>
+ <h3><b> ● fabs() (p.71) </b></h3>
  1. fabs()는 실수를 받아서 절대값을 반환한다.
 
  ```
@@ -189,7 +189,7 @@ printf("%lf", result); /*올림 연산을 한 결과인 결과를 출력*/
 
  <hr>
  
- <h3><b> ● pow()와 sqrt() </b></h3>
+ <h3><b> ● pow()와 sqrt() (p.72) </b></h3>
  
  ```
  printf("10의 3승은 %.0.f\n",pow(10.0,3.0));
@@ -203,11 +203,11 @@ printf("%lf", result); /*올림 연산을 한 결과인 결과를 출력*/
 <br>즉, 루트 x를 구해주는 함수 (제곱근을 구해주는 함수).
  <br>
  
- * 예제
+ # 예제
  
  ```
- 10의 3승은 1000
- 16의 제곱근은 4.
+10의 3승은 1000
+16의 제곱근은 4.
  ```
 
  ```
@@ -236,16 +236,16 @@ int main(void) /* main 함수 호출 */
  
  <hr>
  
- <h3><b> ● 중간 점검 </b></h3>
- 1) 90도에서의 싸인값을 계산하는 문장을 작성하여 보아라.
+ <h3><b> ● 중간 점검 (p.74) </b></h3>
+ <h4> 1) 90도에서의 싸인값을 계산하는 문장을 작성하여 보아라.</h4>
  <br>ㄴ sin(90.0*(3.141592/180.0));
  <br>
- 2) rand() % 10 이 계산하는 값의 범위는?
+ <h4> 2) rand() % 10 이 계산하는 값의 범위는? </h4>
  <br>ㄴ 0에서 9
  
  <hr>
  
- <h3><b> ● 기타 함수 </b></h3>
+ <h3><b> ● 기타 함수 (p.75) </b></h3>
  
  ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/3b7cf779-aa97-48c7-8219-41125b47f4dd)
 
@@ -265,9 +265,9 @@ int main(void) /*메인 함수 호출*/
 ```
  <hr>
  
- <h3><b> ● Lab : 시간 맞추기 게임 </b></h3>
+ <h3><b> ● Lab : 시간 맞추기 게임 (p.77) </b></h3>
  
- * 사용자에게 정확한 시간을 예측하게 하는 게임을 만들어보자. 
+ # 사용자에게 정확한 시간을 예측하게 하는 게임을 만들어보자. 
 <br>사용자에게 10초가 지나면 엔터키를 누르라고 한 후에, 정확한 시간과 얼마나 차이나는지 출력
 
  ```
@@ -307,9 +307,9 @@ int main(void)
  
  <hr>
  
- <h3><b> ● Lab : 나무 높이 측정 </b></h3>
+ <h3><b> ● Lab : 나무 높이 측정 (p.79) </b></h3>
  
- * 각도기와 삼각 함수를 이용하면 나무의 높이를 측정할 수 있다.
+ # 각도기와 삼각 함수를 이용하면 나무의 높이를 측정할 수 있다.
  <br>다음 그림을 참조하여서 나무의 높이를 측정하는 프로그램을 작성하여보자.
  
  ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/117555db-cb8e-45d9-8fe3-80de1f6cacb6)
@@ -351,7 +351,7 @@ int main(void) /*메인 함수 호출*/
  
  <h3><b> ● Lab : 삼각함수 그리기 (p.81) </b></h3>
  
- * 우리는 삼각함수를 계산하는 라이브러리 함수를 학습하였다.
+ # 우리는 삼각함수를 계산하는 라이브러리 함수를 학습하였다.
  <br>이것을 이용하여서 싸인함수 그래프를 90도 회전하여서 그려보자
  
  ![image](https://github.com/Sohyeon97/Assignment_C/assets/128660870/027f6df6-73c9-495a-89d1-8e3bd3bcf391)
@@ -429,7 +429,7 @@ int main(void) /*main 함수 호출 */
  
  <hr>
  
- <h3><b> ● Mini Project : 공학용 계산기 프로그램 작성 (p.85) </b></h3>
+ <h3><b> ● Mini Project : 공학용 계산기 프로그램 작성 (p.85-89) </b></h3>
  
  * 이번 장에서 학습한 함수들을 이용하여 사인값이나 코사인값을 계산할 수 있는
  <br>공학용 계산기를 만들어보자. 아직 구현 안 된 기능은 도전문제에서 추가해보자.
@@ -481,50 +481,51 @@ void factorial() /*팩토리얼을 계산하는 함수 출력*/
 
 void sine() /*사인 값을 계산하는 함수 출력*/
 {
-    double a, result;
-    printf("각도를 입력하시오: ");
-    scanf("%lf", &a);
-    result = sin(a);
-    printf("결과 = %lf\n\n", result);
+    double a, result; /*변수 double(실수 데이터 저장하기 위한 자료형) a(각도 저장), result 선언*/
+    printf("각도를 입력하시오: "); /*사용자에게 각도를 입력하라는 문구 출력*/
+    scanf("%lf", &a); /*사용자가 각도 입력*/
+    result = sin(a); /*사인값 계산*/
+    printf("결과 = %lf\n\n", result); /*결과 출력*/
 }
 
-// 밑이 10인 로그 값을 계산하는 함수
-void longBase10()
+
+void longBase10() /*밑이 10인 로그 값을 계산하는 함수 선언*/
 {
-    double a, result;
-    printf("실수값을 입력하시오: ");
-    scanf("%lf", &a);
-    if (a <= 0.0)
-        printf("오류\n");
-    else {
-        result = log10(a);
-        printf("결과 = %lf\n\n", result);
+    double a, result; /*변수 2개 double a, result 선언*/
+    printf("실수값을 입력하시오: "); /*사용자에게 실수값을 입력하라는 문구 출력*/
+    scanf("%lf", &a); /*사용자가 실수 값 입력함*/
+    if (a <= 0.0) /*만약 a가 0.0보다 작거나 같다면*/
+        printf("오류\n"); /*'오류'로 출력됨*/
+    else /*아니라면 (if-else)구문*/ 
+    {
+        result = log10(a); /*밑이 10인 로그 값 계산*/
+        printf("결과 = %lf\n\n", result); /*결과 값 출력*/
     }
 }
 
-int main(void)
+int main(void) /*메인함수 호출*/
 {
     while (1) {
         switch (menu()) {
             case 1:
-                factorial(); // 팩토리얼 계산 함수 호출
-                break;
+                factorial(); /*만약 사용자가 메뉴 1번을 선택한다면, 팩토리얼을 계산*/ 
+                break; /*break를 걸어줌으로써 다음 case를 실행하지 못 하게 함. (switch-break)문 */
                 
             case 2:
-                sine(); // 사인 값 계산 함수 호출
-                break;
+                sine(); /* 만약 사용자가 케이스 2번을 선택한다면 사인값을 계산하는 함수 호출*/
+                break; /*break를 걸어줌으로써 다음 case를 실행하지 못 하게 함*/
                 
             case 3:
-                longBase10(); // 밑이 10인 로그 값 계산 함수 호출
-                break;
+                longBase10(); /* 만약 사용자가 케이스 3을 선택한다면,밑이 10인 로그 값 계산 함수 호출*/
+                break; /*break를 걸어줌으로써 다음 case를 실행하지 못 하게 함*/
                 
             case 7:
-                printf("종료합니다.\n");
-                return 0;
+                printf("종료합니다.\n"); /*만약 사용자가 7번을 선택한다면 '종료합니다'라는 문구 출력*/
+                return 0; /*0으로 초기화 및 프로그램 정상 종료*/
                 
             default:
-                printf("잘못된 선택입니다.\n");
-                break;
+                printf("잘못된 선택입니다.\n"); /* 메뉴 1-7 외에 다른 번호를 선택할 경우 '잘못된 선택'이라는 문구 출력*/
+                break; /*break를 걸어줌으로써 다른 case를 실행하지 못 하게 함*/
         }
     }
 }
