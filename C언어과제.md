@@ -349,7 +349,7 @@ int main(void) /*메인 함수 호출*/
 
 <hr>
  
- <h3><b> ● Lab : 삼각함수 그리기 </b></h3>
+ <h3><b> ● Lab : 삼각함수 그리기 (p.81) </b></h3>
  
  * 우리는 삼각함수를 계산하는 라이브러리 함수를 학습하였다.
  <br>이것을 이용하여서 싸인함수 그래프를 90도 회전하여서 그려보자
@@ -358,5 +358,176 @@ int main(void) /*메인 함수 호출*/
  <br> ㄴ 출력 예시
  
  ```
+#include <stdio.h> /*C언어에서 랜덤함수를 사용하기 위한 헤더 파일*/
+#include <math.h> /*여러 수학 함수들을 포함하는 표준 라이브러리*/
+
+#define PI 3.141592 /*PI는 전처리기 지시문(preprocessor directive)으로 수학적으로 원주율(Pi)를 나타내며, 3.141592로 대락 표현*/
+
+double rad(double degree) /*각도를 라디안으로 변환하는 함수*/
+{
+    return PI * degree / 180.0; /*주어진 degree 값을 라디안으로 변환하여 반환*/
+}
+
+
+void drawbar(int height) /*막대 그래프를 그리는 함수*/
+{
+    for (int i = 0; i < height; i++)
+        printf("*"); /*만약 i라는 변수가 height 보다 작을 경우 i는 계속 증가하고(증감함수), "*"을 출력한다*/
+    printf("\n"); /*줄바꿈*/
+}
+
+int main(void) /*main 함수 호출 */
+{
+    int degree, x, y; /* 3개의 변수 degree(각도 저장 변수), x, y(막대 그래프 높이 저장 변수) 선언 */
+    
+    for (degree = 0; degree <= 90; degree += 10) {
+       /*각도 degree가 90도 보다 작거나 같을 경우, 10도씩 증가*/
+       /*이때 sin 값은 -1.0~1.0이므로 정수로 반올림 하여 증폭*/
+ 
+        y = (int)(60 * sin(rad((double)degree)) + 0.5); /*증폭된 값을 변수 y에 저장*/
+        drawbar(y); /*drawbar() 함수를 호출하여 y 값을 매개변수로 전달하여 막대 그래프를 그림*/
+    }
+    
+    return 0; /*0으로 초기화 및 프로그램 정상 종료*/
+}
+```
+ 
+ <hr>
+ 
+ <h3><b> ● 함수를 사용하는 이유 (p.83) </b></h3>
+ 
+ 1) 코드의 중복성을 없애준다.
+ 2) 제작된 함수는 다른 프로그램을 제작할 때도 재사용이 가능하다.
+ 3) 한 문제를 단순한 부분으로 분해할 수 있다.
+ 
+ <hr>
+ 
+ <h3><b> ● 복잡한 프로그램은 함수로 분리한다 (p.84) </b></h3>
+ 
+ ```
+ int main(void)
+ {
+   // 숫자들의 리스트를 키보드에서 읽어들이는 코드
+   .....
+   // 숫자들을 크기순응로 정렬하는 코드
+   .....
+   // 정렬된 숫자들의 리스트를 화면에 출력하는 코드
+   .....
+ ```
+ ↓
+ ```
+ int main(void)
+ {
+   ...
+   read_list(); // 숫자들의 리스트를 키보드에서 읽어 들이는 함수
+   sort_list(); // 숫자들의 리스트를 크기 순으로 정렬하는 함수
+   print_list(); // 숫자들의 리스트를 화면에 출력하는 함수
+   ...
+ }
+ ```
+ ㄴ 이처럼 함수를 사용하면 복잡한 프로그램을 보다 단순하게 표현할 수 있다.
+ 
+ <hr>
+ 
+ <h3><b> ● Mini Project : 공학용 계산기 프로그램 작성 (p.85) </b></h3>
+ 
+ * 이번 장에서 학습한 함수들을 이용하여 사인값이나 코사인값을 계산할 수 있는
+ <br>공학용 계산기를 만들어보자. 아직 구현 안 된 기능은 도전문제에서 추가해보자.
+ 
+ ```
+ 1. 팩토리얼
+ 2. 사인
+ 3. 로그 (base 10)
+ 4. 제곱근
+ 5. 순열(nPr)
+ 6. 조합(nCr)
+ 7. 종료
+ 선택해주세요 : 1
+ 정수를 입력하시오 : 10
+ 결과 = 3628800
+ ```
+ 
+ ```
+#include <stdio.h> /*C언어에서 랜덤함수를 사용하기 위한 헤더 파일*/
+#include <math.h> /*여러 수학 함수들을 포함하는 표준 라이브러리*/
+
+
+int menu(void) /*메뉴 출력과 선택을 위한 함수 호출*/
+{
+    int n; /*변수 n선언 (메뉴 선택을 위해 변수 n선언) */
+    printf("1. factorial\n");
+    printf("2. sin\n");
+    printf("3. log(base10)\n");
+    printf("4. square root\n");
+    printf("5. permutation(nPr)\n");
+    printf("6. combination(nCr)\n");
+    printf("7. End\n");
+    printf("Please Select: ");
+    scanf("%d", &n);
+    return n;
+}
+
+// 팩토리얼을 계산하는 함수
+void factorial()
+{
+    long long n, result = 1, i;
+    printf("정수를 입력하시오: ");
+    scanf("%lld", &n);
+    for (i = 1; i <= n; i++)
+        result = result * i;
+    printf("결과 = %lld\n\n", result);
+}
+
+// 사인 값을 계산하는 함수
+void sine()
+{
+    double a, result;
+    printf("각도를 입력하시오: ");
+    scanf("%lf", &a);
+    result = sin(a);
+    printf("결과 = %lf\n\n", result);
+}
+
+// 밑이 10인 로그 값을 계산하는 함수
+void longBase10()
+{
+    double a, result;
+    printf("실수값을 입력하시오: ");
+    scanf("%lf", &a);
+    if (a <= 0.0)
+        printf("오류\n");
+    else {
+        result = log10(a);
+        printf("결과 = %lf\n\n", result);
+    }
+}
+
+int main(void)
+{
+    while (1) {
+        switch (menu()) {
+            case 1:
+                factorial(); // 팩토리얼 계산 함수 호출
+                break;
+                
+            case 2:
+                sine(); // 사인 값 계산 함수 호출
+                break;
+                
+            case 3:
+                longBase10(); // 밑이 10인 로그 값 계산 함수 호출
+                break;
+                
+            case 7:
+                printf("종료합니다.\n");
+                return 0;
+                
+            default:
+                printf("잘못된 선택입니다.\n");
+                break;
+        }
+    }
+}
+```
  
  
