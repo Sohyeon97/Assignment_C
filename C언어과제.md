@@ -455,31 +455,31 @@ int main(void) /*main 함수 호출 */
 int menu(void) /*메뉴 출력과 선택을 위한 함수 호출*/
 {
     int n; /*변수 n선언 (메뉴 선택을 위해 변수 n선언) */
-    printf("1. factorial\n");
-    printf("2. sin\n");
-    printf("3. log(base10)\n");
-    printf("4. square root\n");
-    printf("5. permutation(nPr)\n");
-    printf("6. combination(nCr)\n");
-    printf("7. End\n");
-    printf("Please Select: ");
-    scanf("%d", &n);
-    return n;
+    printf("1. factorial\n"); /*' 1.팩토리얼' 출력*/
+    printf("2. sin\n"); /* 2.사인 출력*/
+    printf("3. log(base10)\n"); /* 3.로그 (base 10) 출력*/
+    printf("4. square root\n"); /* 4.제곱근 출력*/
+    printf("5. permutation(nPr)\n"); /* 5.순열 출력*/
+    printf("6. combination(nCr)\n"); /* 6.조합 출력*/
+    printf("7. End\n"); /* 7.종료 출력*/
+    printf("Please Select: "); /* '선택하시오' 출력*/
+    scanf("%d", &n); /*원하는 번호 (정수=d) 입력*/
+    return n; /* 사용자가 선택한 값 반환*/
 }
 
-// 팩토리얼을 계산하는 함수
-void factorial()
+void factorial() /*팩토리얼을 계산하는 함수 출력*/
 {
-    long long n, result = 1, i;
-    printf("정수를 입력하시오: ");
-    scanf("%lld", &n);
+    long long n, result = 1, i; /*long long n, result=1, i 세 개의 변수 선언*/
+    printf("정수를 입력하시오: "); /*'정수를 입력하시오' 출력*/
+    scanf("%lld", &n); /*사용자가 정수를 입력하게 함*/
     for (i = 1; i <= n; i++)
-        result = result * i;
-    printf("결과 = %lld\n\n", result);
+        result = result * i; /*for문을 사용한 팩토리얼 값 계산, 만약 i가 n보다 작거나 같을 경우 i는 계속 증가, 결과는 결과값 * 1로 계산 */
+                      
+    printf("결과 = %lld\n\n", result); /*결과값 출력*/
 }
 
-// 사인 값을 계산하는 함수
-void sine()
+
+void sine() /*사인 값을 계산하는 함수 출력*/
 {
     double a, result;
     printf("각도를 입력하시오: ");
